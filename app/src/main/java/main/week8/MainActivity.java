@@ -84,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateResult(Double result) {
-        resultField.setText(String.valueOf(result));
+        if (result == result.intValue()) {
+            resultField.setText(String.valueOf(result.intValue()));
+        } else {
+            resultField.setText(String.format("%.2f", result));
+        }
     }
 }

@@ -47,17 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/resultNumberField"
-        android:layout_width="215dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
@@ -67,8 +56,8 @@
 
     <EditText
         android:id="@+id/inputNumberField1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="213dp"
+        android:layout_height="57dp"
         android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="Input 1"
@@ -79,8 +68,8 @@
 
     <EditText
         android:id="@+id/inputNumberField2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="215dp"
+        android:layout_height="54dp"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:hint="Input 2"
@@ -93,7 +82,10 @@
         android:id="@+id/resultView"
         android:layout_width="184dp"
         android:layout_height="44dp"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="540dp" />
+        android:layout_marginTop="250dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNumberField2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
