@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button substractButton;
     private Button multiplyButton;
     private Button divisionButton;
+    Double n1, n2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,42 @@ public class MainActivity extends AppCompatActivity {
         multiplyButton = findViewById(R.id.multiplierButton);
         divisionButton = findViewById(R.id.divisionButton);
 
-        
+        additionButton.setOnClickListener(e -> addition());
+        substractButton.setOnClickListener(e -> subtraction());
+        divisionButton.setOnClickListener(e -> division());
+        multiplyButton.setOnClickListener(e -> multiplication());
+
+    }
+
+    private Double addition() {
+        n1 = Double.parseDouble(inputNumberField1.getText().toString());
+        n2 = Double.parseDouble(inputNumberField2.getText().toString());
+        System.out.println("adding");
+        return n1 + n2;
+    }
+
+    private Double subtraction() {
+        n1 = Double.parseDouble(inputNumberField1.getText().toString());
+        n2 = Double.parseDouble(inputNumberField2.getText().toString());
+        System.out.println("subtracting");
+        return n1 - n2;
+    }
+
+    private Double multiplication() {
+        n1 = Double.parseDouble(inputNumberField1.getText().toString());
+        n2 = Double.parseDouble(inputNumberField2.getText().toString());
+        System.out.println("multiplying");
+        return n1 * n2;
+    }
+
+    private Double division() {
+        n1 = Double.parseDouble(inputNumberField1.getText().toString());
+        n2 = Double.parseDouble(inputNumberField2.getText().toString());
+        if (!n2.equals(0d)) {
+            System.out.println("dividing");
+            return n1 / n2;
+        } else {
+            return null;
+        }
     }
 }
