@@ -17,10 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText inputNumberField1;
     private EditText inputNumberField2;
     private TextView resultField;
-    private Button additionButton;
-    private Button substractButton;
-    private Button multiplyButton;
-    private Button divisionButton;
+
     Double n1, n2;
 
     @Override
@@ -33,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button additionButton;
+        Button substractButton;
+        Button multiplyButton;
+        Button divisionButton;
 
         inputNumberField1 = findViewById(R.id.inputNumberField1);
         inputNumberField2 = findViewById(R.id.inputNumberField2);
@@ -49,35 +51,39 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private Double addition() {
+    private void addition() {
         n1 = Double.parseDouble(inputNumberField1.getText().toString());
         n2 = Double.parseDouble(inputNumberField2.getText().toString());
         System.out.println("adding");
-        return n1 + n2;
+        updateResult(n1 + n2);
     }
 
-    private Double subtraction() {
+    private void subtraction() {
         n1 = Double.parseDouble(inputNumberField1.getText().toString());
         n2 = Double.parseDouble(inputNumberField2.getText().toString());
         System.out.println("subtracting");
-        return n1 - n2;
+        updateResult(n1 - n2);
     }
 
-    private Double multiplication() {
+    private void multiplication() {
         n1 = Double.parseDouble(inputNumberField1.getText().toString());
         n2 = Double.parseDouble(inputNumberField2.getText().toString());
         System.out.println("multiplying");
-        return n1 * n2;
+        updateResult(n1 * n2);
     }
 
-    private Double division() {
+    private void division() {
         n1 = Double.parseDouble(inputNumberField1.getText().toString());
         n2 = Double.parseDouble(inputNumberField2.getText().toString());
         if (!n2.equals(0d)) {
             System.out.println("dividing");
-            return n1 / n2;
+            updateResult(n1 / n2);
         } else {
-            return null;
+            resultField.setText("Zero division");
         }
+    }
+
+    private void updateResult(Double result) {
+        resultField.setText(String.valueOf(result));
     }
 }
